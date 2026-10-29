@@ -1,0 +1,459 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0c0b10;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+header {
+    width: 100%;
+    height: 72px;
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background: rgba(12, 11, 16, 0.45);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.menu a {
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.menu a:hover {
+    color: #e3485e;
+}
+
+.comprar {
+    padding: 13px 24px;
+    border: 1px solid #ffffff80;
+    border-radius: 8px;
+    background: #ffffff20;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.menu-mobile {
+    display: none;
+}
+
+
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 880px;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+
+
+.hero-imagem {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+    overflow: hidden;
+}
+
+.hero-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* SOMBRA DA IMAGEM */
+
+.hero-sombra {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 7, 11, 0.92) 0%,
+            rgba(7, 7, 11, 0.67) 35%,
+            transparent 75%
+        ),
+        linear-gradient(
+            0deg,
+            #0c0b10 0%,
+            transparent 24%
+        );
+}
+
+
+
+.hero-conteudo {
+    position: absolute;
+    left: 5%;
+    top: 43%;
+    width: 60%;
+}
+
+.sobretitulo {
+    display: none;
+    color: #e3485e;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+h1 {
+    font-size: clamp(50px, 5.6vw, 86px);
+    font-weight: 900;
+    line-height: 1.06;
+    letter-spacing: -3px;
+}
+
+h1 span {
+    display: block;
+    white-space: nowrap;
+}
+
+.descricao {
+    max-width: 500px;
+    font-size: 17px;
+    color: #e3e1e5;
+    line-height: 1.6;
+    margin-top: 26px;
+}
+
+.descricao-mobile {
+    display: none;
+}
+
+
+
+.botao {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 28px;
+    min-width: 178px;
+    height: 57px;
+    border: 1px solid #ffffff70;
+    background: #ffffff29;
+    border-radius: 13px;
+    font-size: 16px;
+    font-weight: 800;
+    transition: 0.2s;
+}
+
+.botao:hover {
+    background: #a51d37;
+}
+
+
+
+.destaques {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 34px;
+    padding: 35px 5% 60px;
+    background: #0c0b10;
+}
+
+.destaques article {
+    border-top: 1px solid #ffffff30;
+    padding-top: 20px;
+}
+
+.indice {
+    color: #e3485e;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.destaques h2 {
+    font-size: 17px;
+    margin: 12px 0;
+}
+
+.destaques p {
+    color: #b9b6c0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+
+@media (min-width: 601px) and (max-width: 1023px) {
+
+    header {
+        height: 70px;
+        padding: 0 5%;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .menu {
+        gap: 18px;
+    }
+
+    .menu a {
+        font-size: 12px;
+    }
+
+    .menu a:last-child {
+        display: none;
+    }
+
+    .comprar {
+        display: none;
+    }
+
+    .hero {
+        height: 865px;
+    }
+
+    .hero-imagem img {
+        object-position: 65% center;
+    }
+
+    .hero-sombra {
+        background:
+            linear-gradient(
+                0deg,
+                #0c0b10 0%,
+                rgba(12, 11, 16, 0.7) 25%,
+                transparent 70%
+            ),
+            linear-gradient(
+                90deg,
+                rgba(12, 11, 16, 0.6),
+                transparent
+            );
+    }
+
+    .hero-conteudo {
+        left: 5%;
+        top: 57%;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: clamp(43px, 7vw, 64px);
+        letter-spacing: -2px;
+    }
+
+    .descricao {
+        font-size: 15px;
+        margin-top: 18px;
+    }
+
+    .botao {
+        margin-top: 22px;
+    }
+
+    .destaques {
+        gap: 18px;
+        padding: 20px 5% 45px;
+    }
+
+    .destaques h2 {
+        font-size: 14px;
+    }
+
+    .destaques p {
+        font-size: 12px;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+
+    header {
+        position: relative;
+        height: 64px;
+        padding: 0 22px;
+        background: #0e0d12;
+    }
+
+    .logo {
+        font-size: 21px;
+        letter-spacing: 1.5px;
+    }
+
+    .menu,
+    .comprar {
+        display: none;
+    }
+
+    .menu-mobile {
+        width: 46px;
+        height: 34px;
+        border-radius: 9px;
+        background: #26232c;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .menu-mobile span {
+        width: 20px;
+        height: 2px;
+        background: white;
+        border-radius: 2px;
+    }
+
+    .hero {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        overflow: visible;
+    }
+
+    .hero-imagem {
+        position: relative;
+        width: 100%;
+        height: 380px;
+        z-index: auto;
+    }
+
+    .hero-imagem img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .hero-sombra {
+        display: none;
+    }
+
+    .hero-conteudo {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        padding: 24px 24px 26px;
+        background: #0c0b10;
+    }
+
+    .sobretitulo {
+        display: block;
+        margin-bottom: 24px;
+    }
+
+    h1 {
+        font-size: 48px;
+        line-height: 1.02;
+        letter-spacing: -2px;
+    }
+
+    h1 .linha-dois {
+        font-size: clamp(25px, 8.2vw, 31px);
+        letter-spacing: -1.3px;
+        margin-top: 8px;
+    }
+
+    .descricao-desktop {
+        display: none;
+    }
+
+    .descricao-mobile {
+        display: block;
+        margin-top: 18px;
+        font-size: 14px;
+        line-height: 1.45;
+    }
+
+    .botao {
+        margin-top: 22px;
+        width: 100%;
+        height: 52px;
+        border: none;
+        border-radius: 11px;
+        background: linear-gradient(
+            135deg,
+            #a51d37,
+            #5d1025
+        );
+        font-size: 15px;
+    }
+
+    .destaques {
+        display: block;
+        padding: 0 24px 40px;
+    }
+
+    .destaques article {
+        padding: 22px 0;
+    }
+
+    .destaques h2 {
+        font-size: 16px;
+        margin: 10px 0 8px;
+    }
+
+    .destaques p {
+        font-size: 13px;
+    }
+}
+
+
+
+@media (max-width: 350px) {
+
+    .hero-conteudo {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    h1 {
+        font-size: 43px;
+    }
+
+    h1 .linha-dois {
+        font-size: 25px;
+    }
+}
